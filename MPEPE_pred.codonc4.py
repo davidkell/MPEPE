@@ -139,6 +139,7 @@ x_test = np.array(x_test)
 times2 = dt.datetime.now()
 print('Time spent: '+ str(times2-times1))
 
+print(x_test)
 pred_seq=pad_sequences(x_test, maxlen=max_seq_len)
 print(pred_seq)
 
