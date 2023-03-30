@@ -5,6 +5,7 @@ import time
 import numpy as np
 from keras.models import load_model
 from keras.preprocessing import sequence
+from keras.utils import pad_sequences
 import datetime as dt
 import pandas as pd
 
@@ -138,7 +139,7 @@ x_test = np.array(x_test)
 times2 = dt.datetime.now()
 print('Time spent: '+ str(times2-times1))
 
-pred_seq=sequence.pad_sequences(x_test, maxlen=max_seq_len)
+pred_seq=pad_sequences(x_test, maxlen=max_seq_len)
 print(pred_seq)
 
 # P6  predict and record results
