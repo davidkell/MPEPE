@@ -114,7 +114,7 @@ time.sleep(1)
 
 # P5  Loading coding file data
 file_pred_url = '%s/Pred_codonc4_%s.res' % (pred_dir, start_name)
-file_pred = open(file_pred_url, 'w', 0)
+file_pred = open(file_pred_url, 'w')
 
 print('Loading data...')
 print("nucl-file: %s\tcodonc4-file: %s" % (infile, file_coding_url))
