@@ -132,7 +132,7 @@ x_test = []
 y_test = []
 for pi in x_test_ori:
     nr = pi.split(' ')[0:-1]
-    ndata = map(int, nr)
+    ndata = [int(x) for x in nr]
     x_test.append(ndata)
 x_test = np.array(x_test)
 
