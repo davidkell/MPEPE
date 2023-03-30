@@ -25,13 +25,16 @@ def name_seq(fasta_file):
         name_list, seq_list = name_list[0], seq_list[0]
     else:
         pass
-    print(name_list, seq_list)
+    print(name_list)
+    print(seq_list)
+    print(len(seq_list))
     return name_list, seq_list
 
 
 def nucl2codon(nucl_seq):
     nucl_seq = nucl_seq.upper().replace('U', 'T')
     codon_num, codon_list, aa_list = int(len(nucl_seq) / 3), [], []
+    print(codon_num, nucl_seq, nucl_seq[(codon_num - 1) * 3:])
     if len(nucl_seq[(codon_num - 1) * 3:]) != 3:
         print('*** Error! => Your sequence is not a cds!!!  Please check your sequence.')
         sys.exit()
