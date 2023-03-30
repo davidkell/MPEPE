@@ -101,7 +101,7 @@ codonc4_coding = {'GCT': 1, 'GCC': 2, 'GCA': 3, 'GCG': 4, 'TGT': 5, 'TGC': 6, 'G
 start_name = infile.split('/')[-1].replace(infile.split('/')[-1].split('.')[-1], '')[:-1]
 name_list, seq_list = name_seq(infile)
 file_coding_url = "./%s_codonc4.txt" % start_name
-file_coding = open(file_coding_url, 'w', 0)
+file_coding = open(file_coding_url, 'wb', 0)
 for name, seq in zip(name_list, seq_list):
     file_coding.write('0 %s ,%s ,\n' % (name.replace(' ', '-'), " ".join(coding_codon(nucl2codon(seq)))))
 file_coding.close()
