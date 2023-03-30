@@ -25,6 +25,7 @@ def name_seq(fasta_file):
         name_list, seq_list = name_list[0], seq_list[0]
     else:
         pass
+    print(name_list, seq_list)
     return name_list, seq_list
 
 
