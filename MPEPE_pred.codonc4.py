@@ -26,16 +26,12 @@ def name_seq(fasta_file):
         name_list, seq_list = name_list[0], seq_list[0]
     else:
         pass
-    print(name_list)
-    print(seq_list)
-    print(len(seq_list))
     return name_list, seq_list
 
 
 def nucl2codon(nucl_seq):
     nucl_seq = nucl_seq.upper().replace('U', 'T')
     codon_num, codon_list, aa_list = int(len(nucl_seq) / 3), [], []
-    print(codon_num, nucl_seq, nucl_seq[(codon_num - 1) * 3:])
     if len(nucl_seq[(codon_num - 1) * 3:]) != 3:
         print('*** Error! => Your sequence is not a cds!!!  Please check your sequence.')
         sys.exit()
@@ -123,7 +119,6 @@ print("nucl-file: %s\tcodonc4-file: %s" % (infile, file_coding_url))
 times1 = dt.datetime.now()
 
 pred_data = pd.read_csv(file_coding_url, index_col=False, header=None)
-print(pred_data.shape)
 
 y_test_ori = pred_data[0]
 x_test_ori = pred_data[1]
@@ -139,9 +134,7 @@ x_test = np.array(x_test)
 times2 = dt.datetime.now()
 print('Time spent: '+ str(times2-times1))
 
-print(x_test)
 pred_seq=pad_sequences(x_test, maxlen=max_seq_len)
-print(pred_seq)
 
 # P6  predict and record results
 all_result0, all_result1, model_use,  = [], [], []
